@@ -3031,7 +3031,7 @@ line-height: 1.0714285714;
       margin: 0 auto;
       max-width: 100%;
       opacity: 1;
-      padding: 30px 20px;
+      padding: 0;
       vertical-align: baseline;
     }
     
@@ -3880,653 +3880,572 @@ line-height: 1.0714285714;
     </style>
 
 
-<style>
-  
-.large{
-    font-family:var(--f-tiempos);
-    font-size:var(--fs-large);
-    letter-spacing:var(--ls-hl)
-}
-.headline{
-    font-family:var(--f-tiempos);
-    font-size:var(--fs-hl);
-    letter-spacing:var(--ls-hl)
-}
-.copy{
-    font-family:var(--f-messina);
-    font-size:var(--fs-copy);
-    letter-spacing:var(--ls-copy)
-}
-figure{
-    width:20vw;
-    height:20vw;
-    background:#cbcbcb
-}
-img{
-    object-fit:cover;
-    width:100%;
-    height:100%
-}
-.light{
-    color:var(--c-text);
-    background:var(--c-bg);
-    transition:all .3s ease-out
-}
-*,:after,:before{
-    margin:0;
-    padding:0;
-    border:0;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box
-}
 
+  <style>
 
-[type=button],[type=reset],[type=submit],button{
-    -webkit-appearance:button
-}
-[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{
-    border-style:none;
-    padding:0
-}
-[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{
-    outline:1px dotted ButtonText
-}
-button:focus,div:focus{
-    outline:0 solid #d3d3d3
-}
-button:disabled{
-    opacity:.5;
-    cursor:inherit
-}
-a{
-    text-decoration:none;
-    color:inherit;
-    cursor:pointer
-}
-figure{
-    margin:0
-}
-p{
-    margin:0
-}
-:root{
-    --white:#fff;
-    --white-fix:#fff;
-    --black-mobile:#000;
-    --black-mobile-fix:#000;
-    --black:#161616;
-    --black-fix:#161616;
-    --gray:#95918a;
-    --blue-dark:#1e2633;
-    --blue-light:#304c5a;
-    --red:#ba614a;
-    --green:#6c7b5a;
-    --sp-0:0.8rem;
-    --sp-1:1.6rem;
-    --sp-2:2rem;
-    --sp-6:6rem;
-    --sp-8:8rem;
-    --sp-18:18rem;
-    --sp-20:20rem;
-    --f-messina:"Messina Regular",sans-serif;
-    --f-messina-semi:"Messina Semi Bold",sans-serif;
-    --f-tiempos:"Tiempos Regular",sans-serif;
-    --f-tiempos-italic:"Tiempos Regular Italic",sans-serif;
-    --fs-large:7.2rem;
-    --fs-hl:4.6rem;
-    --fs-copy:2.2rem;
-    --fs-small:1.6rem;
-    --ls-small:-0.03rem;
-    --ls-copy:-0.03rem;
-    --ls-hl:-0.14rem;
-    --lh:1.2;
-    --brd:1px solid var(--black);
-    --g-cols:2;
-    --g-gap:var(--sp-3)
-}
-@media (max-width:900px){
-    :root{
-        --white:#000;
-        --black:#fff;
-        --sp-1:1rem;
-        --sp-6:4rem;
-        --sp-8:6rem;
-        --sp-18:8rem;
-        --sp-20:10rem;
-        --fs-large:3.6rem;
-        --fs-hl:2.4rem;
-        --fs-copy:1.8rem;
-        --fs-small:1.4rem;
-        --ls-small:0rem;
-        --ls-copy:0rem;
-        --ls-hl:0rem;
-        --lh:1.2
+    
+    svg:not(:root){
+      overflow:hidden
     }
-}
-.img-sidebyside{
-    display:flex;
-    padding-left:var(--sp-1);
-    padding-bottom:var(--sp-20)
-}
-@media (max-width:900px){
-    .img-sidebyside{
-        flex-direction:column;
-        padding-left:var(--sp-2);
-        padding-right:var(--sp-2);
-        padding-bottom:8rem
+    .grid-container:after,.grid-container:before,.grid-wrap:after,.grid-wrap:before{
+      content:"";
+      display:table
     }
-}
-.img-sidebyside figure{
-    width:calc(100vw / 2);
-    margin-right:var(--sp-1);
-    height:calc((100vw / 2) * .7)
-}
-@media (max-width:900px){
-    .img-sidebyside figure{
-        width:100%;
-        height:calc((100vw / 1) * .7);
-        margin-bottom:var(--sp-2)
+    .grid-container:after,.grid-wrap:after{
+      clear:both
     }
-}
-.img-full{
-    padding-bottom:var(--sp-20)
-}
-.img-full figure{
-    overflow:hidden;
-    width:100vw;
-    height:calc(100vw * .56)
-}
-@media (max-width:900px){
-    .img-full figure{
-        height:calc(100vw * 1.4)
+    *{
+      box-sizing:border-box
     }
-}
-.img-full .full-img{
-    width:100vw;
-    height:calc(100vw * .56);
-    background-position:50% 70%;
-    background-repeat:no-repeat;
-    background-size:cover
-}
-@media (max-width:900px){
-    .img-full .full-img{
-        height:100%
+    html{
+      font-size:100%;
+      -webkit-text-size-adjust:100%;
+      -ms-text-size-adjust:100%;
+      height:100%
     }
-}
-.img-quote{
-    display:flex;
-    padding-bottom:var(--sp-20);
-    padding-left:var(--sp-1)
-}
-@media (max-width:1020px){
-    .img-quote{
-        flex-direction:column;
-        padding-left:var(--sp-2);
-        padding-right:var(--sp-2)
-    }
-}
-.img-quote div,.img-quote figure{
-    width:calc(100vw / 2);
-    margin-right:var(--sp-1);
-    height:calc((100vw / 2) * .7)
-}
-@media (max-width:1020px){
-    .img-quote div,.img-quote figure{
-        width:100%;
-        height:calc((100vw / 1) * .7)
-    }
-}
-.img-quote div{
-    padding-left:6.2rem;
-    transform:translateY(-20px);
-    height:auto
-}
-@media (max-width:1020px){
-    .img-quote div{
-        padding-left:0;
-        padding-bottom:8rem
-    }
-}
-.img-quote div p{
-    color:var(--red);
-    font-family:var(--f-tiempos-italic)
-}
-.img-quote div p{
-    width:85%
-}
-@media (max-width:1020px){
-    .img-quote div p{
-        width:100%
-    }
-}
-.img-copy{
-    display:flex;
-    padding-bottom:var(--sp-20)
-}
-.img-copy .copy,.img-copy .img{
-    width:calc(100% / 2)
-}
-@media (max-width:1020px){
-    .img-copy .copy,.img-copy .img{
-        width:95%
-    }
-}
-@media (max-width:1020px){
-    .img-copy{
-        flex-direction:column
-    }
-}
-.img-copy .copy{
-    margin-left:var(--sp-1)
-}
-@media (max-width:1020px){
-    .img-copy{
-        flex-direction:column;
-        padding-bottom:8rem;
-        padding-left:var(--sp-2);
-        padding-right:var(--sp-2)
-    }
-}
-.img-copy .copy>p:last-child{
-    padding-bottom:0
-}
-.img-copy figure{
-    margin:0 auto;
-    width:30vw;
-    height:30vw
-}
-@media (max-width:1020px){
-    .img-copy figure{
-        width:100vw;
-        height:calc(100vw * 1.5);
-        margin-left:calc(var(--sp-2) * -1)
-    }
-}
-.img-copy div{
-    width:calc(100vw / 2);
-    margin-right:var(--sp-1);
-    height:auto
-}
-@media (max-width:1020px){
-    .img-copy div{
-        width:100%
-    }
-}
-@media (max-width:1020px){
-    .img-copy figure{
-        margin-bottom:8rem
-    }
-}
-.img-copy p{
-    width:85%;
-    padding-bottom:var(--sp-1)
-}
-@media (max-width:1020px){
-    .img-copy p{
-        padding-left:var(--sp-2);
-        padding-right:var(--sp-2);
-        width:100%;
-        padding-bottom:var(--sp-2)
-    }
-}
-@media (max-width:1020px){
-    .img-copy a{
-        padding-left:var(--sp-2);
-        padding-right:var(--sp-2);
-        width:100%
-    }
-}
-.img-copy .copy-content{
-    width:87%;
-    padding-left:0;
-    padding-right:var(--sp-2)
-}
-@media (max-width:1020px){
-    .img-copy .copy-content{
-        width:100%;
-        padding-left:var(--sp-2)
-    }
-}
-.img-copy .read-btn{
-    text-align:left;
-    padding-top:var(--sp-2);
-    padding-left:var(--sp-2);
-    font-family:var(--f-messina);
-    text-decoration:underline;
-    display:none;
-    margin-left:var(--sp-1)
-}
-@media (max-width:900px){
-    .img-copy .read-btn{
-        display:block
-    }
-}
- 
-@media (max-width:900px){
-    .img-full{
-      padding-bottom: 0;
-    margin-bottom: 7.5rem;
-    }
-}
-
-@media (max-width:900px){
-  .img-copy figure, .img-full figure{
-      padding: 0 20px;
-    background: transparent;
-    }
-}
-
-
-
-
-</style>
-
-<style>
-  section.c-timeline.l-columns-container.l-columns-container--outmost {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    display: flex;
-    font-size: 18px;
-    font-weight: 400;
-    justify-content: flex-end;
-    letter-spacing: -.792px;
-    line-height: 21px;
-    margin: 5rem 0 0;
-    max-width: 1560px;
-    vertical-align: baseline;
-  }
+    
   
-  
-  div.c-timeline__inner.l-column--16.l-tablet-column--12.l-columns-container {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    display: flex;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -.792px;
-    line-height: inherit;
-    margin: 0;
-    max-width: 1560px;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  
-  div.c-timeline__inner.l-column--16.l-tablet-column--12.l-columns-container:not([class*="l-column--"]) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-  
-  @media screen and (min-width: 764px) {
-    div.c-timeline__inner.l-column--16.l-tablet-column--12.l-columns-container {
-      border-top: 1px solid #d8d8d8;
-      justify-content: space-between;
-      
+    h1,h2,h3,h4,h5,h6{
+      font-size:1em;
+      display:block;
+      margin:0;
+      font-weight:400
     }
-  }
-  
-  @media screen and (max-width: 763px) {
-    div.c-timeline__inner.l-column--16.l-tablet-column--12.l-columns-container {
-      flex-direction: column;
+    p{
+      display:block;
+      margin:0
     }
-  }
-  
-  div.c-timeline__headline-container {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -.792px;
-    line-height: inherit;
-    margin: 0;
-    padding: .4em 0 0;
-    vertical-align: baseline;
-    width: 100%;
-  }
-  
-  @media screen and (max-width: 763px) {
-    div.c-timeline__headline-container {
-      border-bottom: 1px solid #d8d8d8;
+    img{
+      max-width:100%;
+      border:0;
+      vertical-align:middle;
+      display:inline-block;
+      width:100%;
+      height:auto
     }
-  }
-  
-  @media screen and (min-width: 764px) {
-    div.c-timeline__headline-container {
-      margin-right: 24px;
-      padding-top: .6em;
-      width: calc(((100% - 264px)/12)*4 + 72px);
+    figure{
+      margin:0
     }
-  }
-  
-  h2.c-timeline__headline {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    font-family: inherit;
-    font-size: 1.625rem;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -.0375em;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  
-  @media screen and (max-width: 763px) {
-    h2.c-timeline__headline {
-      margin-bottom: .675em;
+    a{
+      -ms-touch-action:none!important
     }
-  }
-  
-  @media screen and (min-width: 764px) {
-    h2.c-timeline__headline {
-      font-size: 1.875rem;
+    picture{
+      display:block
     }
-  }
-  
-  div.c-timeline__items {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -.792px;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  
-  @media screen and (min-width: 764px) {
-    div.c-timeline__items {
-      width: calc(((100% - 264px)/12)*8 + 168px);
+    a{
+      color:inherit;
+      text-decoration:none
     }
-  }
-  
-  div.c-timeline__item {
-    border-bottom: 1px solid #d8d8d8;
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    display: flex;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    height: 3.625rem;
-    justify-content: space-between;
-    letter-spacing: -.792px;
-    line-height: inherit;
-    margin: 0;
-    padding: .4em 0 0;
-    vertical-align: baseline;
-  }
-  
-  @media screen and (min-width: 764px) {
-    div.c-timeline__item {
-      height: 4.125rem;
-      padding-top: .6em;
+    b{
+      font-weight:500
     }
-  }
-  
-  div.c-timeline__item__left {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    display: flex;
-    font-family: inherit;
-    font-size: 1rem;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -.0375em;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  
-  @media screen and (min-width: 764px) {
-    div.c-timeline__item__left {
-      font-size: 1.875rem;
+    i{
+      font-style:normal
     }
-  }
-  
-  p.c-timeline__item__number {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    display: block;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -1.125px;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-    width: 1.875em;
-  }
-  
-  @media screen and (min-width: 764px) {
-    p.c-timeline__item__number {
-      width: 1.8em;
+    .{
+      opacity:0;
+      transform:translateZ(0)
     }
-  }
-  
-  p.c-timeline__item__title {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -1.125px;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  
-  div.c-timeline__item__right {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #1e1e1e;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -.792px;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  
-  p.c-timeline__item__duration.f-red {
-    border-width: 0;
-    box-sizing: border-box;
-    color: #f36e5d;
-    font-family: inherit;
-    font-size: inherit;
-    font-stretch: inherit;
-    font-style: inherit;
-    font-variant-caps: inherit;
-    font-variant-east-asian: inherit;
-    font-variant-ligatures: inherit;
-    font-variant-numeric: inherit;
-    font-weight: inherit;
-    letter-spacing: -.0333em;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-  }
-  
-  @media screen and (max-width: 763px) {
-    p.c-timeline__item__duration.f-red {
-      font-size: .75rem;
+    .ed{
+      opacity:1;
+      transition:opacity 2s cubic-bezier(.25,.46,.45,.94)
     }
-  }
-  </style>
-
+    .wysiwyg a{
+      word-break:break-all;
+      transition:all .25s ease-out;
+      box-shadow:inset 0 -1px 0 rgba(29,28,40,.999)
+    }
+    .wysiwyg a:hover{
+      padding-bottom:2px;
+      box-shadow:inset 0 -1px 0 rgba(29,28,40,.001)
+    }
+    .wysiwyg p{
+      margin-bottom:1em
+    }
+    .wysiwyg p:last-child{
+      margin-bottom:0
+    }
+    ::-webkit-input-placeholder{
+      color:#1d1c28
+    }
+    :-moz-placeholder{
+      color:#1d1c28
+    }
+    ::-moz-placeholder{
+      color:#1d1c28
+    }
+    :-ms-input-placeholder{
+      color:#1d1c28
+    }
+    .grid-wrap{
+      display:block;
+      max-width:2250px;
+      padding-left:14px;
+      padding-right:14px;
+      margin-left:auto;
+      margin-right:auto
+    }
+    @media (min-width:750px){
+      .grid-wrap{
+        padding-left:30px;
+        padding-right:30px
+    }
+    }
+    @media (min-width:980px){
+      .grid-wrap{
+        padding-left:48px;
+        padding-right:48px
+    }
+    }
+    @media (min-width:1150px){
+      .grid-wrap{
+        padding-left:55px;
+        padding-right:55px
+    }
+    }
+    @media (min-width:1420px){
+      .grid-wrap{
+        padding-left:73px;
+        padding-right:73px
+    }
+    }
+    @media (min-width:1800px){
+      .grid-wrap{
+        padding-left:92px;
+        padding-right:92px
+    }
+    }
+    .grid-item{
+      width:100%;
+      padding-left:10px;
+      padding-right:10px
+    }
+    @media (min-width:750px){
+      .grid-item{
+        padding-left:14px;
+        padding-right:14px
+    }
+    }
+    @media (min-width:980px){
+      .grid-item{
+        padding-left:17px;
+        padding-right:17px
+    }
+    }
+    @media (min-width:1150px){
+      .grid-item{
+        padding-left:20px;
+        padding-right:20px
+    }
+    }
+    @media (min-width:1420px){
+      .grid-item{
+        padding-left:27px;
+        padding-right:27px
+    }
+    }
+    @media (min-width:1800px){
+      .grid-item{
+        padding-left:33px;
+        padding-right:33px
+    }
+    }
+    .grid-container{
+      display:block;
+      max-width:2250px;
+      padding-left:24px;
+      padding-right:24px;
+      margin-left:auto;
+      margin-right:auto
+    }
+    @media (min-width:750px){
+      .grid-container{
+        padding-left:44px;
+        padding-right:44px
+    }
+    }
+    @media (min-width:980px){
+      .grid-container{
+        padding-left:65px;
+        padding-right:65px
+    }
+    }
+    @media (min-width:1150px){
+      .grid-container{
+        padding-left:75px;
+        padding-right:75px
+    }
+    }
+    @media (min-width:1420px){
+      .grid-container{
+        padding-left:100px;
+        padding-right:100px
+    }
+    }
+    @media (min-width:1800px){
+      .grid-container{
+        padding-left:125px;
+        padding-right:125px
+    }
+    }
+    @media (max-width:749px){
+      .grid-gutter-\@s{
+        padding-left:34px;
+        padding-right:34px
+    }
+    }
+    .grid-1\/8{
+      width:12.5%!important;
+      float:left
+    }
+    .push-1{
+      margin-left:12.5%!important
+    }
+    .grid-2\/8{
+      width:25%!important;
+      float:left
+    }
+    .push-2{
+      margin-left:25%!important
+    }
+    .grid-3\/8{
+      width:37.5%!important;
+      float:left
+    }
+    .push-3{
+      margin-left:37.5%!important
+    }
+    .grid-4\/8{
+      width:50%!important;
+      float:left
+    }
+    .push-4{
+      margin-left:50%!important
+    }
+    .grid-5\/8{
+      width:62.5%!important;
+      float:left
+    }
+    .push-5{
+      margin-left:62.5%!important
+    }
+    .grid-6\/8{
+      width:75%!important;
+      float:left
+    }
+    .push-6{
+      margin-left:75%!important
+    }
+    .grid-7\/8{
+      width:87.5%!important;
+      float:left
+    }
+    .push-7{
+      margin-left:87.5%!important
+    }
+    @media (min-width:750px){
+      .grid-1\/8\@m{
+        width:12.5%!important;
+        float:left
+    }
+      .push-1\@m{
+        margin-left:12.5%!important
+    }
+      .grid-2\/8\@m{
+        width:25%!important;
+        float:left
+    }
+      .push-2\@m{
+        margin-left:25%!important
+    }
+      .grid-3\/8\@m{
+        width:37.5%!important;
+        float:left
+    }
+      .push-3\@m{
+        margin-left:37.5%!important
+    }
+      .grid-4\/8\@m{
+        width:50%!important;
+        float:left
+    }
+      .push-4\@m{
+        margin-left:50%!important
+    }
+      .grid-5\/8\@m{
+        width:62.5%!important;
+        float:left
+    }
+      .push-5\@m{
+        margin-left:62.5%!important
+    }
+      .grid-6\/8\@m{
+        width:75%!important;
+        float:left
+    }
+      .push-6\@m{
+        margin-left:75%!important
+    }
+      .grid-7\/8\@m{
+        width:87.5%!important;
+        float:left
+    }
+      .push-7\@m{
+        margin-left:87.5%!important
+    }
+    }
+    @media (min-width:1150px){
+      .grid-1\/8\@l{
+        width:12.5%!important;
+        float:left
+    }
+      .push-1\@l{
+        margin-left:12.5%!important
+    }
+      .grid-2\/8\@l{
+        width:25%!important;
+        float:left
+    }
+      .push-2\@l{
+        margin-left:25%!important
+    }
+      .grid-3\/8\@l{
+        width:37.5%!important;
+        float:left
+    }
+      .push-3\@l{
+        margin-left:37.5%!important
+    }
+      .grid-4\/8\@l{
+        width:50%!important;
+        float:left
+    }
+      .push-4\@l{
+        margin-left:50%!important
+    }
+      .grid-5\/8\@l{
+        width:62.5%!important;
+        float:left
+    }
+      .push-5\@l{
+        margin-left:62.5%!important
+    }
+      .grid-6\/8\@l{
+        width:75%!important;
+        float:left
+    }
+      .push-6\@l{
+        margin-left:75%!important
+    }
+      .grid-7\/8\@l{
+        width:87.5%!important;
+        float:left
+    }
+      .push-7\@l{
+        margin-left:87.5%!important
+    }
+    }
+    @media (min-width:1800px){
+      .grid-1\/8\@xl{
+        width:12.5%!important;
+        float:left
+    }
+      .push-1\@xl{
+        margin-left:12.5%!important
+    }
+      .grid-2\/8\@xl{
+        width:25%!important;
+        float:left
+    }
+      .push-2\@xl{
+        margin-left:25%!important
+    }
+      .grid-3\/8\@xl{
+        width:37.5%!important;
+        float:left
+    }
+      .push-3\@xl{
+        margin-left:37.5%!important
+    }
+      .grid-4\/8\@xl{
+        width:50%!important;
+        float:left
+    }
+      .push-4\@xl{
+        margin-left:50%!important
+    }
+      .grid-5\/8\@xl{
+        width:62.5%!important;
+        float:left
+    }
+      .push-5\@xl{
+        margin-left:62.5%!important
+    }
+      .grid-6\/8\@xl{
+        width:75%!important;
+        float:left
+    }
+      .push-6\@xl{
+        margin-left:75%!important
+    }
+      .grid-7\/8\@xl{
+        width:87.5%!important;
+        float:left
+    }
+      .push-7\@xl{
+        margin-left:87.5%!important
+    }
+    }
+    .t-size-xl{
+      font-size:20px;
+      line-height:1.25;
+      letter-spacing:-.01em
+    }
+    @media (min-width:750px){
+      .t-size-xl{
+        font-size:30px;
+        line-height:1.1666666667
+    }
+    }
+    @media (min-width:1150px){
+      .t-size-xl{
+        font-size:35px;
+        line-height:1.2857142857
+    }
+    }
+    @media (min-width:1800px){
+      .t-size-xl{
+        font-size:50px;
+        line-height:1.2
+    }
+    }
+    .t-size-l{
+      font-size:20px;
+      line-height:1.25
+    }
+    @media (min-width:750px){
+      .t-size-l{
+        font-size:30px;
+        line-height:1.1666666667
+    }
+    }
+    @media (min-width:1150px){
+      .t-size-l{
+        font-size:30px;
+        line-height:1.3333333333
+    }
+    }
+    @media (min-width:1800px){
+      .t-size-l{
+        font-size:40px;
+        line-height:1.125
+    }
+    }
+    .t-size-m{
+      font-size:15px;
+      line-height:1.3333333333
+    }
+    @media (min-width:750px){
+      .t-size-m{
+        font-size:20px;
+        line-height:1.25
+    }
+    }
+    @media (min-width:1800px){
+      .t-size-m{
+        font-size:30px;
+        line-height:1.1666666667
+    }
+    }
+    .t-size-s{
+      font-size:10px;
+      line-height:2.5
+    }
+    @media (min-width:750px){
+      .t-size-s{
+        font-size:15px;
+        line-height:2
+    }
+    }
+    @media (min-width:1800px){
+      .t-size-s{
+        font-size:20px;
+        line-height:1.75
+    }
+    }
+    .t-spacing-m{
+      margin-bottom:1.5294117647em
+    }
+    .t-spacing-1{
+      margin-bottom:1em
+    }
+    .t-spacing-s{
+      margin-bottom:1.5em
+    }
+    .spacing-s{
+      margin-bottom:30px
+    }
+    @media (min-width:1150px){
+      .spacing-s{
+        margin-bottom:60px
+    }
+    }
+    .spacing-m{
+      margin-bottom:30px
+    }
+    @media (min-width:750px){
+      .spacing-m{
+        margin-bottom:40px
+    }
+    }
+    @media (min-width:1150px){
+      .spacing-m{
+        margin-bottom:60px
+    }
+    }
+    @media (min-width:1800px){
+      .spacing-m{
+        margin-bottom:80px
+    }
+    }
+    .spacing-l{
+      margin-bottom:30px
+    }
+    @media (min-width:750px){
+      .spacing-l{
+        margin-bottom:80px
+    }
+    }
+    @media (min-width:1150px){
+      .spacing-l{
+        margin-bottom:100px
+    }
+    }
+    @media (min-width:1800px){
+      .spacing-l{
+        margin-bottom:120px
+    }
+    }
+    .spacing-xl{
+      margin-bottom:60px
+    }
+    @media (min-width:750px){
+      .spacing-xl{
+        margin-bottom:80px
+    }
+    }
+    @media (min-width:1150px){
+      .spacing-xl{
+        margin-bottom:120px
+    }
+    }
+    @media (min-width:1800px){
+      .spacing-xl{
+        margin-bottom:160px
+    }
+    }
+    
+        </style>
   
 </head>
 <div class="menu__container">
@@ -4566,7 +4485,8 @@ p{
                     
         <div class="c-media__video-container c-media__video-container--autoplay">
         
-        <img src="https://tff-maa.imgix.net/img/hero-images/assets/uploads/30e31st_01_hero_desktop.jpg?q=80&auto=compress" alt="">
+        <img style="height: 100%;
+        object-fit: cover;" src="https://tff-maa.imgix.net/img/hero-images/assets/uploads/30e31st_01_hero_desktop.jpg?q=80&auto=compress" alt="">
       
         
         </div>
@@ -4623,7 +4543,7 @@ p{
 "><h1>LANDMARQUE*</h1></a>
 			</div>
 		</div>
-      <div style="opacity: 1;" class="page__content">
+      <div style="opacity: 1; padding: 0 ;" class="page__content">
         <div data-w-id="80b31143-c18a-ab4a-07ab-a0ecceca1dc0" style="opacity: 1;" class="container padding-top-btm">
           
         
@@ -4799,100 +4719,113 @@ p{
               </div>
             </div>
     
-            <div data-w-id="5f595f11-3cc3-3553-2a42-76a022e4e48a" style="opacity: 1;" class="container padding-btm">
-              <div class="divider"></div>
-              <div class="grid__8">
-                <div id="w-node-_5f595f11-3cc3-3553-2a42-76a022e4e490-e84f3398" class="content__block sticky">
-                  <h5>Investment principles</h5>
-                </div>
-    
-               
-    
-               
-                
-              </div>
-              
-            </div>
-    
+            <section>
+
+              <div class="blocks">
             
-              
-        
-          
+                <figure class="grid-container spacing-xl">
+                  <picture class="">
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    
+                    <!--[if IE 9]></video><![endif]-->
+                    <img class="" src="https://www.wood.no/imager/uploads/images/1329/db743b5fa84daa87ef9dd6c11eaeac13.jpg" data-sizes="auto" >
+                  </picture>
+                    </figure>
+                    <div class="grid-wrap t-size-l spacing-xl">
+                <div class="grid-item push-2@m grid-6/8@m push-3@l grid-5/8@l grid-4/8@xl">
+                  <h2 class="t-spacing-1"></h2>
+                  <div class="wysiwyg"><p>Hva kan man få til med prefabrikerte betongelementer? Denne eneboligen er tradisjonell og utradisjonell på samme tid. Med klassisk saltak, men yttervegger i betong og en beskjeden vinkel, får huset et uttrykk som blir kjent og ukjent på samme tid. </p></div>
+                </div>
+              </div>              
+                  
+                  
+                    
+                <div class="grid-wrap">
+                  <figure class="grid-item grid-4/8@m spacing-xl">
+                    <picture class="">
+                     
+                      <img class="" src="https://www.wood.no/imager/uploads/images/1330/fe59e52766980eed6b7f90c224690cdf.jpg">
+                    </picture>
+                        </figure>
+                  <figure class="grid-item push-1@m grid-3/8@m grid-gutter-@s spacing-xl">
+                    <picture class="">
+                      
+                      <img class="" src="https://www.wood.no/imager/uploads/images/1334/b48baeb216b858b28c9580d00975f21a.jpg">
+                    </picture>
+                        </figure>
+                </div>
+                        
+                <div class="grid-wrap spacing-xl">
+                  <figure class="grid-item grid-6/8@m">
+                    <picture>
+                      <img class="" src="https://www.wood.no/imager/uploads/images/1333/aaedff13ae5d1afa4dfe33ee37d69757.jpg" alt="">
+                    </picture>
+                        </figure>
+                </div>
+                    <div class="grid-wrap t-size-l spacing-xl">
+                <div class="grid-item push-2@m grid-6/8@m push-3@l grid-5/8@l grid-4/8@xl">
+                  <h2 class="t-spacing-1"></h2>
+                  <div class="wysiwyg"><p>Innad i boligen er det fokusert på uvante romligheter, og forbindelser mellom rom og etasjer.</p></div>
+                </div>
+              </div>        
+                  
+                  
+                    
+                <div class="grid-wrap">
+                  <figure class="grid-item grid-3/8@m grid-gutter-@s spacing-xl">
+                    <picture class="">
+                     
+                      <img class="" src="https://www.wood.no/imager/uploads/images/1337/cae832695c87875ee20a113e2f791948.jpg" alt="">
+                    </picture>
+                        </figure>
+                  <figure class="grid-item push-1@m grid-4/8@m spacing-xl">
+                    <picture class="">
+                      
+                      <img class="" src="https://www.wood.no/imager/uploads/images/1335/70be71d51365a5d56e8f0d5a647cb148.jpg" alt="">
+                    </picture>
+                        </figure>
+                </div>
+                          
+                <figure class="grid-container spacing-xl">
+                  <picture class="">
+                   
+                    <img class="" src="https://www.wood.no/imager/uploads/images/1339/ab31efe446435f23ba09f3695dedcf17.jpg" alt="">
+                  </picture>
+                    </figure>
+                    <div class="grid-wrap t-size-l spacing-xl">
+                <div class="grid-item push-2@m grid-6/8@m push-3@l grid-5/8@l grid-4/8@xl">
+                  <h2 class="t-spacing-1"></h2>
+                  <div class="wysiwyg"><p>Det er brukt varme materialer og farger som står i kontrast til betongen som dukker opp i taket, gulvet og veggene. </p></div>
+                </div>
+              </div>        
+                  
+                  
+                    
+                <div class="grid-wrap">
+                  <figure class="grid-item grid-4/8@m spacing-xl">
+                    <picture class="">
+                      
+                      <img class="" src="https://www.wood.no/imager/uploads/images/1338/c3a6e676ed041481dac2e75fabeae50e.jpg" alt="">
+                    </picture>
+                        </figure>
+                  <figure class="grid-item push-1@m grid-3/8@m grid-gutter-@s spacing-xl">
+                    <picture class="">
+                      
+                      <img class="" src="https://www.wood.no/imager/uploads/images/1332/1af18baae117b3daf516c43596ef56b7.jpg" alt="">
+                    </picture>
+                        </figure>
+                </div>
+                          
+                <figure class="grid-container spacing-xl">
+                  <picture class="">
+                    
+                    <img class="" src="https://www.wood.no/imager/uploads/images/1331/67e6a95319f96fa2be2ff4d266f024aa.jpg" alt="">
+                  </picture>
+                    </figure>
+                </div>
 
+            </section>
            
-          </div>
-
-       
-      </div>
-      
-      <section class="content-workdetail">
-
-
-
-<div class="img-copy detail">
-    <figure>
-    <img data-src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_03_half_width.jpg?q=80&amp;auto=compress" class="lazy entered loaded" alt="" data-ll-status="loaded" src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_03_half_width.jpg?q=80&amp;auto=compress">
-    
-  </figure>
-    
-    <div class="copy">
-        
-        <div class="copy-content">
-          <p>The entrance to the 39-story residential tower is marked with an ornamental metal canopy and fluted cast stone piers that rise up eight floors. As the building steps back, the thin, ribbon-like piers continue up the façade, creating bays of metal-framed windows before interlacing to form an elegant lattice crown. </p>
-<p>This Gothic-inspired motif recurs throughout the building's interiors&nbsp;in the design of door and window frames, light fixtures, and other details. The open-plan units also feature natural stone surfaces, wide-plank oak floors, walnut cabinetry, and floor-to-ceiling single-pane windows. </p>
-<p>The full-floor penthouse apartments are distinguished by triangular windows created by the façade’s interlacing piers—an effect reminiscent of the windows in the crown of the Chrysler Building. </p>
-        </div>
-    </div>
-    
-</div>
-
-
-
-<div class="img-sidebyside">
-<figure>
-
-    <img alt="" class="lazy entered exited" src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_08_half_width_left_1.jpg?w=1500&amp;q=80&amp;auto=compress">
-    
-</figure>
-
-<figure>
-
-    <img alt="" class="lazy entered exited" src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_08_half_width_right_top_2.jpg?w=1500&amp;q=80&amp;auto=compress">
-    
-</figure>
-</div>
-
-<div class="img-full">
-  <figure>
-    <img data-src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_04_full_width.jpg?w=3000&amp;q=50&amp;auto=compress" alt="30 East 31st Street Lobby" class="lazy entered loaded" data-ll-status="loaded" src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_04_full_width.jpg?w=3000&amp;q=50&amp;auto=compress">
-    <img src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_04_full_width.jpg?w=10&amp;q=10&amp;auto=compress" class="placeholder-svg">
-  </figure>
-  
-</div>
-
-<div class="img-full">
-  <figure>
-    <img data-src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_05_full_width.jpg?w=3000&amp;q=50&amp;auto=compress" alt="" class="lazy entered loaded" data-ll-status="loaded" src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_05_full_width.jpg?w=3000&amp;q=50&amp;auto=compress">
-    <img src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_05_full_width.jpg?w=10&amp;q=10&amp;auto=compress" class="placeholder-svg">
-  </figure>
-  
-</div>
-
-<div class="img-quote"><div class="quote headline">
-      <p>
-        The three-bedroom “select” duplex features operable full-height windows that open onto a large private terrace. 
-      </p>
-   </div>
-<figure>
-      <img src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_07_half_width.jpg?q=80&amp;auto=compress" alt="">
-      
-   </figure></div>
-
-<div class="img-full">
-  <figure>
-    <img data-src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_06_full_width.jpg?w=3000&amp;q=50&amp;auto=compress" alt="" class="lazy entered loaded" data-ll-status="loaded" src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_06_full_width.jpg?w=3000&amp;q=50&amp;auto=compress">
-    <img src="https://tff-maa.imgix.net/img/content-images/assets/uploads/30e31st_06_full_width.jpg?w=10&amp;q=10&amp;auto=compress" class="placeholder-svg">
-  </figure>
   
 </div>
 
